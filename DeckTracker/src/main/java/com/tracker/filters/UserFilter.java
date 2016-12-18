@@ -26,7 +26,7 @@ public class UserFilter implements Filter{
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
 			throws IOException, ServletException {
 		
-		if(session.getUser()!= null){
+		if(session.getUser() == null){
 			HttpServletResponse httpResponse = (HttpServletResponse) res;
 			httpResponse.sendRedirect("/login.xhtml");
 		}else{
